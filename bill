@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+	float fiyat[5];
+	int i;
+	float ode;
+	float buyuk;
+	float tutar=0;
+	for(i=0;i<=4;i++)
+	{
+		printf("%d. sepet tutarini girin-> ",i+1);
+		scanf("%f",&fiyat[i]);
+		tutar=tutar+fiyat[i];
+	}
+	buyuk=fiyat[0];
+	for(i=0;i<=4;i++)
+	{
+		if(fiyat[i]>buyuk)
+		{
+			buyuk=fiyat[i];
+		}
+	}
+	printf("En pahali urunun fiyati-> %.1f\n",buyuk);
+	if(tutar>=1000)
+	{
+		ode=tutar-((tutar*15)/100);
+		printf("Odemeniz gereken indirimli tutar-> %f\n",ode);
+	}
+	else
+	{
+		printf("Odemeniz gereken normal tutar-> %f\n",tutar);
+	}
+	return 0;
+}
